@@ -2,7 +2,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { TbMessageChatbotFilled } from "react-icons/tb";
-import thembelihle from '../assets/thembelihle.jpg';
+import thembelihle from '../assets/1-13acafe1.png';
 
 export const About = () => {
   return (
