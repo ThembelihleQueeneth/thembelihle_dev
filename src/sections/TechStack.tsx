@@ -52,7 +52,7 @@ const techCategories = [
 
 export const TechStack = () => {
   return (
-    <div className="py-20 px-60 bg-white text-black">
+    <div className="py-20 px-60 bg-white text-black" id="stack">
       <h1 className="text-4xl font-bold text-yellow-500 mb-12 text-center">
         Tech Stack
       </h1>

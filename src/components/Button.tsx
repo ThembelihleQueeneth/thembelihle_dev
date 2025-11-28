@@ -16,7 +16,7 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`${color} text-black px-4 py-2 rounded-lg flex items-center gap-2 hover:opacity-90 transition`}
+      className={`${color} text-black px-4 py-2 rounded-lg flex items-center gap-2 hover:opacity-90 transition cursor-pointer`}
     >
       {icon && <span className="text-xl">{icon}</span>}
       <span>{text}</span>
