@@ -1,0 +1,52 @@
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { TbMessageChatbotFilled } from "react-icons/tb";
+import thembelihle from '../assets/thembelihle.jpg';
+
+export const About = () => {
+  return (
+    <div 
+      id="about"
+      className="flex items-center justify-between bg-gray-50 ml-60 mr-60 py-20"
+    >
+      {/* LEFT SIDE CONTENT */}
+      <div className="max-w-xl m-10">
+        <h1 className="text-3xl font-semibold text-gray-700">Hi There,</h1>
+
+        <h2 className="text-4xl font-bold text-gray-900 mt-2">
+          I'm <span className="text-yellow-500 px-2 rounded ">Thembelihle</span>
+        </h2>
+
+        <p className="text-3xl text-yellow-500 mt-1">Queeneth Maluka</p>
+
+        <h3 className="text-2xl font-semibold text-gray-800 mt-3">
+          A <span className="text-yellow-500">FullStack</span> Developer
+        </h3>
+
+        <p className="text-gray-600 mt-4 leading-relaxed">
+          I have over a year of experience in full-stack development. 
+          I build websites that work smoothly on any device and are easy for everyone to use. 
+          I focus on solving hard problems with clean, practical code that gets the job done right.
+        </p>
+
+        {/* SOCIAL ICONS */}
+        <div className="flex gap-4 text-2xl mt-6 text-gray-700">
+          <a href="#" className="hover:text-yellow-500 transition"><FaGithub /></a>
+          <a href="#" className="hover:text-yellow-500 transition"><FaLinkedin /></a>
+          <a href="#" className="hover:text-yellow-500 transition"><MdEmail /></a>
+          <a href="#" className="hover:text-yellow-500 transition"><TbMessageChatbotFilled /></a>
+        </div>
+      </div>
+
+      {/* RIGHT SIDE IMAGE */}
+      <div>
+        <img 
+          src={thembelihle} 
+          alt="Thembelihle Maluka" 
+          className="w-80 h-80 m-10 object-cover rounded-3xl shadow-lg"
+        />
+      </div>
+    </div>
+  );
+};
