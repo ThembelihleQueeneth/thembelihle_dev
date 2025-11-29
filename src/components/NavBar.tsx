@@ -83,7 +83,14 @@ export const NavBar = () => {
 
       <div className="flex items-center gap-4 mr-60">
         <TbMessageChatbotFilled className="text-gray-700 hover:text-amber-500 text-2xl" />
-        <Button icon={<FaDownload />} text="Resume" />
+        <a 
+          href="/Maluka_Thembelihle_CV.pdf" 
+          download="Maluka_Thembelihle_CV.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button icon={<FaDownload />} text="Resume" />
+        </a>
       </div>
     </nav>
   );

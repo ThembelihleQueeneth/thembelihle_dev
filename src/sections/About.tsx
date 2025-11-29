@@ -32,10 +32,10 @@ export const About = () => {
 
         {/* SOCIAL ICONS */}
         <div className="flex gap-4 text-2xl mt-6 text-gray-700">
-          <a href="#" className="hover:text-yellow-500 transition"><FaGithub /></a>
-          <a href="#" className="hover:text-yellow-500 transition"><FaLinkedin /></a>
-          <a href="#" className="hover:text-yellow-500 transition"><MdEmail /></a>
-          <a href="#" className="hover:text-yellow-500 transition"><TbMessageChatbotFilled /></a>
+          <a href="https://github.com/ThembelihleQueeneth" className="hover:text-yellow-500 transition" target="_blank"><FaGithub /></a>
+          <a href="https://www.linkedin.com/in/thembelihle-maluka-287b542ba/" className="hover:text-yellow-500 transition" target="_blank"><FaLinkedin /></a>
+          <a href="mailto:malukathembelihle95@gmail.com" className="hover:text-yellow-500 transition" target="_blank"><MdEmail /></a>
+          <a href="" className="hover:text-yellow-500 transition"><TbMessageChatbotFilled /></a>
         </div>
       </div>
 
