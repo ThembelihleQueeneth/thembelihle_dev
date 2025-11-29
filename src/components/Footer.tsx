@@ -4,6 +4,8 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { TbMessageChatbotFilled } from "react-icons/tb";
 import { ChatModal } from "../components/ChatModal";
+import { FaWhatsapp } from "react-icons/fa";
+
 
 export const Footer = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -66,6 +68,14 @@ export const Footer = () => {
             className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
           >
             <MdEmail />
+          </a>
+          <a
+            href="0793316193"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
+          >
+            <FaWhatsapp />
           </a>
 
           {/* Chat Modal Button */}
