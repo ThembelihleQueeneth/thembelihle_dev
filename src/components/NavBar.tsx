@@ -79,6 +79,19 @@ export const NavBar = () => {
             Contact
           </Link>
         </li>
+        <li>
+          <Link 
+            to="gallery"
+            smooth={true}
+            duration={600}
+            offset={-50}
+            spy={true}
+            activeClass="text-yellow-500 -translate-y-1"
+            className="cursor-pointer text-black hover:text-yellow-500 transition-transform duration-200"
+          >
+            Gallery
+          </Link>
+        </li>
       </ul>
 
       <div className="flex items-center gap-4 mr-60">
