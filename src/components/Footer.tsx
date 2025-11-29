@@ -1,9 +1,13 @@
+import { useState } from "react";
 import { Link } from "react-scroll";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { TbMessageChatbotFilled } from "react-icons/tb";
+import { ChatModal } from "../components/ChatModal";
 
 export const Footer = () => {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
   return (
     <footer className="bg-gray-100 border-t border-gray-300 py-10 px-6">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
@@ -15,13 +19,12 @@ export const Footer = () => {
 
         {/* NAVIGATION LINKS */}
         <ul className="flex flex-wrap justify-center md:justify-end gap-6 text-gray-800 font-medium">
-          {[
-            { name: "About", to: "about" },
+          {[{ name: "About", to: "about" },
             { name: "Experience", to: "experience" },
             { name: "Stack", to: "stack" },
             { name: "Projects", to: "projects" },
-            { name: "Contact", to: "contact" }
-          ].map((item) => (
+            { name: "Contact", to: "contact" },
+            { name: "Gallery", to: "gallery" }].map((item) => (
             <li key={item.to}>
               <Link
                 to={item.to}
@@ -40,37 +43,46 @@ export const Footer = () => {
 
         {/* SOCIAL ICONS */}
         <div className="flex gap-5 text-2xl text-gray-700">
-          {[
-            {
-              icon: <FaGithub />,
-              href: "https://github.com/ThembelihleQueeneth",
-            },
-            {
-              icon: <FaLinkedin />,
-              href: "https://www.linkedin.com/in/thembelihle-maluka-287b542ba/",
-            },
-            {
-              icon: <MdEmail />,
-              href: "mailto:malukathembelihle95@gmail.com",
-            },
-            {
-              icon: <TbMessageChatbotFilled />,
-              href: "#",
-            },
-          ].map((item, index) => (
-            <a
-              key={index}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
-            >
-              {item.icon}
-            </a>
-          ))}
-        </div>
+          <a
+            href="https://github.com/ThembelihleQueeneth"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/thembelihle-maluka-287b542ba/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="mailto:malukathembelihle95@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
+          >
+            <MdEmail />
+          </a>
 
+          {/* Chat Modal Button */}
+          <button
+            onClick={() => setIsChatOpen(true)}
+            className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
+          >
+            <TbMessageChatbotFilled />
+          </button>
+        </div>
       </div>
+
+      {/* Chat Modal */}
+      <ChatModal
+        isOpen={isChatOpen}
+        onClose={() => setIsChatOpen(false)}
+      />
     </footer>
   );
 };

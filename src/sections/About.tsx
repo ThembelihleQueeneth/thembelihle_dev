@@ -1,10 +1,13 @@
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
+import { useState } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { TbMessageChatbotFilled } from "react-icons/tb";
 import thembelihle from '../assets/1-13acafe1.png';
+import { ChatModal } from "../components/ChatModal"; // adjust path
 
 export const About = () => {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
   return (
     <div 
       id="about"
@@ -35,7 +38,14 @@ export const About = () => {
           <a href="https://github.com/ThembelihleQueeneth" className="hover:text-yellow-500 transition" target="_blank"><FaGithub /></a>
           <a href="https://www.linkedin.com/in/thembelihle-maluka-287b542ba/" className="hover:text-yellow-500 transition" target="_blank"><FaLinkedin /></a>
           <a href="mailto:malukathembelihle95@gmail.com" className="hover:text-yellow-500 transition" target="_blank"><MdEmail /></a>
-          <a href="" className="hover:text-yellow-500 transition"><TbMessageChatbotFilled /></a>
+
+          {/* Chat button */}
+          <button
+            onClick={() => setIsChatOpen(true)}
+            className="hover:text-yellow-500 transition text-2xl"
+          >
+            <TbMessageChatbotFilled />
+          </button>
         </div>
       </div>
 
@@ -47,6 +57,12 @@ export const About = () => {
           className="w-80 h-80 m-10 object-cover rounded-3xl shadow-lg"
         />
       </div>
+
+      {/* Chat Modal */}
+      <ChatModal
+        isOpen={isChatOpen}
+        onClose={() => setIsChatOpen(false)}
+      />
     </div>
   );
 };
