@@ -1,14 +1,21 @@
 import { useState } from "react";
-import { Link } from "react-scroll";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom"; // for page navigation
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { TbMessageChatbotFilled } from "react-icons/tb";
 import { ChatModal } from "../components/ChatModal";
-import { FaWhatsapp } from "react-icons/fa";
-
 
 export const Footer = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
+
+  const sections = [
+    { name: "About", to: "about" },
+    { name: "Experience", to: "experience" },
+    { name: "Stack", to: "stack" },
+    { name: "Projects", to: "projects" },
+    { name: "Contact", to: "contact" },
+  ];
 
   return (
     <footer className="bg-gray-100 border-t border-gray-300 py-10 px-6">
@@ -21,14 +28,9 @@ export const Footer = () => {
 
         {/* NAVIGATION LINKS */}
         <ul className="flex flex-wrap justify-center md:justify-end gap-6 text-gray-800 font-medium">
-          {[{ name: "About", to: "about" },
-            { name: "Experience", to: "experience" },
-            { name: "Stack", to: "stack" },
-            { name: "Projects", to: "projects" },
-            { name: "Contact", to: "contact" },
-            { name: "Gallery", to: "gallery" }].map((item) => (
+          {sections.map((item) => (
             <li key={item.to}>
-              <Link
+              <ScrollLink
                 to={item.to}
                 smooth={true}
                 duration={600}
@@ -38,9 +40,19 @@ export const Footer = () => {
                 className="cursor-pointer text-gray-800 hover:text-yellow-500 hover:-translate-y-1 transition-all duration-200"
               >
                 {item.name}
-              </Link>
+              </ScrollLink>
             </li>
           ))}
+
+          {/* Journey link goes to /journey page */}
+          <li>
+            <RouterLink
+              to="/journey"
+              className="cursor-pointer text-gray-800 hover:text-yellow-500 hover:-translate-y-1 transition-all duration-200"
+            >
+              Journey
+            </RouterLink>
+          </li>
         </ul>
 
         {/* SOCIAL ICONS */}
@@ -70,7 +82,7 @@ export const Footer = () => {
             <MdEmail />
           </a>
           <a
-            href="0793316193"
+            href="https://wa.me/0793316193"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
