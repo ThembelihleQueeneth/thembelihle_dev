@@ -91,7 +91,7 @@ export const Footer = () => {
           </a>
 
           {/* Chat Modal Button */}
-          <button
+          <button aria-label="chat"
             onClick={() => setIsChatOpen(true)}
             className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
           >

@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { motion, useScroll,  } from "framer-motion";
+import { Link as RouterLink } from "react-router-dom"; // for page navigation
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+
 
 const YELLOW = "#FFD600";
 const BLACK = "#0B0B0B";
@@ -231,13 +235,13 @@ const SceneTodayIllustration: React.FC<{ className?: string }> = ({ className })
 );
 
 const scenes: Scene[] = [
-  { id: "s2021", year: "2021", title: "The Beginning — Tshwane University of Technology", bullets: ["Accepted into TUT","Didn't know how to use a computer","Coding classes felt overwhelming"], Illustration: Scene2021Illustration },
+  { id: "s2021", year: "2021", title: "The Beginning — Tshwane University of Technology", bullets: ["Accepted into TUT for a Diploma in Computer Science","Didn't know how to use a computer","Coding classes felt overwhelming"], Illustration: Scene2021Illustration },
   { id: "s2022", year: "2022", title: "A Difficult Lesson", bullets: ["Understood basics","Relaxed and underperformed","Learned discipline matters"], Illustration: Scene2022Illustration },
   { id: "s2023", year: "2023", title: "A Shift in Mindset", bullets: ["Befriended hardworking classmates","Took my course seriously and did great"], Illustration: Scene2023Illustration },
   { id: "s2024", year: "2024", title: "Final Year & WIL", bullets: ["Finished strong academically","WIL at Hiteknology Solutions (Sep 2024 - Jun 2025)","Fell in love with building websites"], Illustration: Scene2024Illustration },
-  { id: "sTeacher", year: "June 2025", title: "Assistant Teacher — A Tough Detour", bullets: ["Highly challenging job","Confirmed my passion for tech"], Illustration: SceneTeacherIllustration },
+  { id: "s2025", year: "June 2025", title: "Assistant Teacher — A Tough Detour", bullets: ["Highly challenging job","Confirmed my passion for tech"], Illustration: SceneTeacherIllustration },
   { id: "smlab", year: "2025", title: "mLab CodeTribe — Transformation", bullets: ["🎓 Graduated from TUT with Diploma in Computer Science (May 2025)","Software developer trainee","Extraordinary training","Became job-ready"], Illustration: SceneMLabIllustration },
-  { id: "stoday", year: "Today", title: "Ready For The Real World", bullets: ["1st place — LVH Hackathon","Skills: HTML, React, TypeScript, Node.js, PostgreSQL, MySQL","Available for opportunities"], Illustration: SceneTodayIllustration },
+  { id: "stoday", year: "2025", title: "Ready For The Real World", bullets: ["1st place — LVH Hackathon","Skills: HTML, React, TypeScript, Node.js, PostgreSQL, MySQL","Available for opportunities"], Illustration: SceneTodayIllustration },
 ];
 
 const fadeUp = {
@@ -308,7 +312,7 @@ export default function CartoonStorytellingApp() {
             </a>
           ))}
         </div>
-        <a href="#contact" className="text-sm px-4 py-2 rounded-lg bg-yellow-400 hover:bg-yellow-500 text-black font-semibold transition-all shadow-sm hover:shadow-md">Hire Me</a>
+        <a href="/Maluka_Thembelihle_CV.pdf" target="blank" className="text-sm px-4 py-2 rounded-lg bg-yellow-400 hover:bg-yellow-500 text-black font-semibold transition-all shadow-sm hover:shadow-md">Download CV</a>
       </motion.nav>
 
       {/* HERO */}
@@ -419,7 +423,7 @@ export default function CartoonStorytellingApp() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-400 py-24 text-center px-6 relative overflow-hidden"
+        className="bg-gradient-to-br from-yellow-100 via-yellow-200 to-yellow-300 py-24 text-center px-6 relative overflow-hidden"
       >
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl"></div>
@@ -442,7 +446,7 @@ export default function CartoonStorytellingApp() {
             I'm actively seeking opportunities to contribute and grow as a developer. HTML, CSS, React, TypeScript, Node.js, PostgreSQL, MySQL.
           </motion.p>
           <motion.a 
-            href="mailto:youremail@example.com" 
+            href="mailto:malukathembelihle95@gmail.com" 
             className="mt-8 inline-block px-10 py-4 bg-black text-white rounded-xl font-bold shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -454,9 +458,70 @@ export default function CartoonStorytellingApp() {
         </div>
       </motion.section>
 
-      <footer className="py-12 text-center text-gray-500 bg-gray-50">
-        <p className="text-sm">© {new Date().getFullYear()} Thabang Quenton Mosegedi — Built with passion & determination</p>
-      </footer>
+     <footer className="bg-gray-100 border-t border-gray-300 py-10 px-6">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+
+        {/* LEFT TEXT */}
+        <p className="text-gray-700 text-center md:text-left text-sm md:text-base">
+          © {new Date().getFullYear()} Thembelihle Queeneth Maluka. All rights reserved.
+        </p>
+
+        {/* NAVIGATION LINKS */}
+        <ul className="flex flex-wrap justify-center md:justify-end gap-6 text-gray-800 font-medium">
+         
+
+          {/* Journey link goes to /journey page */}
+          <li>
+            <RouterLink
+              to="/"
+              className="cursor-pointer text-gray-800 hover:text-yellow-500 hover:-translate-y-1 transition-all duration-200"
+            >
+              Go to Home Page
+            </RouterLink>
+          </li>
+        </ul>
+
+        {/* SOCIAL ICONS */}
+        <div className="flex gap-5 text-2xl text-gray-700">
+          <a
+            href="https://github.com/ThembelihleQueeneth"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/thembelihle-maluka-287b542ba/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="mailto:malukathembelihle95@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
+          >
+            <MdEmail />
+          </a>
+          <a
+            href="https://wa.me/0793316193"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
+          >
+            <FaWhatsapp />
+          </a>
+
+         
+        </div>
+      </div>
+
+   
+    </footer>
     </div>
   );
 }

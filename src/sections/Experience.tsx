@@ -25,6 +25,7 @@ export const Experience = () => {
         "Use GitHub for version control and collaborative coding.",
         "Deploy and host applications on Vercel for live testing and production.",
         "Learn and apply Object-Oriented Programming (OOP) principles in projects.",
+        "Learning UI/UX with Figma"
       ],
     },
     {
