@@ -1,78 +1,64 @@
 import { FaCode, FaTools } from "react-icons/fa";
 import { LiaCodeBranchSolid } from "react-icons/lia";
-import html from '../assets/html.png';
-import bootstrap from '../assets/Bootstrap_logo.svg.png';
-import css from '../assets/css3.png';
-import git from '../assets/git.jpg';
-import github from '../assets/github.png';
-import java from '../assets/java.png';
-import javascript from '../assets/javascript.png';
-import mysql from '../assets/MySQL-logo.png.webp';
-import node from '../assets/nodejs.jpg';
-import postgresql from '../assets/posgresql.png';
-import react from '../assets/React-icon.svg.png';
-import tailwind from '../assets/tailwind.png';
-import typescript from '../assets/typescript.png';
-import vercel from '../assets/vercel.png';
 
 const techCategories = [
   {
     title: "Front-end",
     icon: <FaCode className="text-yellow-500 mr-2" />,
     skills: [
-      { name: "HTML5", img: html },
-      { name: "CSS3", img: css },
-      { name: "Bootstrap", img: bootstrap },
-      { name: "React", img: react },
-      { name: "Tailwind CSS", img: tailwind },
-      { name: "TypeScript", img: typescript },
-      { name: "JavaScript", img: javascript },
+      { name: "HTML5", img: "/html.png" },
+      { name: "CSS3", img: "/css3.png" },
+      { name: "Bootstrap", img: "/Bootstrap_logo.svg.png" },
+      { name: "React", img: "/React-icon.svg.png" },
+      { name: "Tailwind CSS", img: "/tailwind.png" },
+      { name: "TypeScript", img: "/typescript.png" },
+      { name: "JavaScript", img: "/javascript.png" },
     ],
   },
   {
     title: "Back-end",
     icon: <LiaCodeBranchSolid className="text-yellow-500 mr-2" />,
     skills: [
-      { name: "Java", img: java },
-      { name: "Node.js", img: node },
-      { name: "MySQL", img: mysql },
-      { name: "PostgreSQL", img: postgresql },
+      { name: "Java", img: "/java.png" },
+      { name: "Node.js", img: "/nodejs.jpg" },
+      { name: "MySQL", img: "/MySQL-logo.png.webp" },
+      { name: "PostgreSQL", img: "/posgresql.png" },
     ],
   },
   {
     title: "Tools",
     icon: <FaTools className="text-yellow-500 mr-2" />,
     skills: [
-      { name: "Git", img: git },
-      { name: "GitHub", img: github },
-      { name: "Vercel", img: vercel },
+      { name: "Git", img: "/git.jpg" },
+      { name: "GitHub", img: "/github.png" },
+      { name: "Vercel", img: "/vercel.png" },
     ],
   },
 ];
 
 export const TechStack = () => {
   return (
-    <div className="py-20 px-60 bg-white text-black" id="stack">
+    <section className="py-20 px-6 md:px-20 lg:px-40 bg-white text-black" id="stack">
       <h1 className="text-4xl font-bold text-yellow-500 mb-12 text-center">
         Tech Stack
       </h1>
 
-      <div className="grid gap-12">
+      <div className="space-y-16">
         {techCategories.map((category, idx) => (
           <div key={idx}>
             <h2 className="flex items-center text-2xl font-semibold mb-6">
               {category.icon} {category.title}
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
               {category.skills.map((skill, i) => (
                 <div
                   key={i}
-                  className="flex flex-col items-center justify-center bg-gray-50 p-4 rounded-xl shadow hover:scale-105 transform transition duration-300"
+                  className="flex flex-col items-center justify-center bg-gray-50 p-5 rounded-2xl shadow-lg hover:scale-105 transform transition duration-300 hover:shadow-2xl"
                 >
                   <img
                     src={skill.img}
                     alt={skill.name}
-                    className="w-12 h-12 object-contain mb-2"
+                    className="w-14 h-14 object-contain mb-3"
                   />
                   <span className="text-gray-700 font-medium text-center">
                     {skill.name}
@@ -83,6 +69,6 @@ export const TechStack = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
