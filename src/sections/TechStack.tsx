@@ -255,10 +255,10 @@ export default function TechStack() {
   }, []);
 
   return (
-    <div className="w-full h-screen bg-gray-900 flex flex-col items-center justify-center relative">
+    <div className="w-full h-screen bg-gray-900 flex flex-col items-center justify-center relative"  id="stack">
       <div className="absolute top-8 text-center z-10">
-        <h1 className="text-5xl font-bold text-white mb-2">Tech Stack</h1>
-        <p className="text-gray-300">Hover over the icons to explore</p>
+        <h1 className="text-5xl font-bold text-white mb-2">Welcome to my World</h1>
+        <p className="text-gray-300">My Tech Stack</p>
       </div>
 
       {isLoading && (
