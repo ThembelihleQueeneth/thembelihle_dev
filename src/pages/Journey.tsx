@@ -295,7 +295,7 @@ export default function CartoonStorytellingApp() {
         className="fixed top-6 left-1/2 transform -translate-x-1/2 z-40 w-11/12 max-w-5xl bg-white/90 backdrop-blur-md shadow-lg rounded-2xl p-4 flex items-center justify-between"
       >
         <div className="flex items-center gap-3">
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-yellow-500 to-amber-600 bg-clip-text text-transparent transition-transform duration-200 group-hover:scale-110">
+          <h1 className="text-2xl font-bold bg-linear-to-r from-yellow-500 to-amber-600 bg-clip-text text-transparent transition-transform duration-200 group-hover:scale-110">
               TQM
             </h1>
           <div className="text-sm">
@@ -319,7 +319,7 @@ export default function CartoonStorytellingApp() {
 
       {/* HERO */}
       <header id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-yellow-50 to-white opacity-50"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-yellow-50 to-white opacity-50"></div>
         <div className="max-w-5xl mx-auto px-6 text-center py-20 relative z-10">
           <motion.div 
             initial="hidden" 
@@ -328,7 +328,7 @@ export default function CartoonStorytellingApp() {
           >
             <motion.div variants={fadeUp}>
               <motion.h1 
-                className="text-5xl md:text-7xl font-black bg-clip-text text-transparent bg-gradient-to-r from-black via-gray-800 to-black"
+                className="text-5xl md:text-7xl font-black bg-clip-text text-transparent bg-linear-to-r from-black via-gray-800 to-black"
                 animate={{ backgroundPosition: ["0%", "100%", "0%"] }}
                 transition={{ duration: 8, repeat: Infinity }}
               >
@@ -394,7 +394,7 @@ export default function CartoonStorytellingApp() {
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-yellow-100 to-yellow-200 text-yellow-900 font-bold text-sm shadow-sm">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-linear-to-r from-yellow-100 to-yellow-200 text-yellow-900 font-bold text-sm shadow-sm">
                   <span className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></span>
                   {scene.year}
                 </div>
@@ -408,7 +408,7 @@ export default function CartoonStorytellingApp() {
                       whileInView={{ x: 0, opacity: 1 }}
                       transition={{ delay: i * 0.1 + 0.3 }}
                     >
-                      <div className="w-4 h-4 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 mt-1.5 flex-shrink-0 shadow-md"></div>
+                      <div className="w-4 h-4 rounded-full bg-linear-to-br from-yellow-400 to-yellow-500 mt-1.5 shrink-0 shadow-md"></div>
                       <div className="text-gray-700 leading-relaxed text-lg">{b}</div>
                     </motion.li>
                   ))}
@@ -425,7 +425,7 @@ export default function CartoonStorytellingApp() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="bg-gradient-to-br from-yellow-100 via-yellow-200 to-yellow-300 py-24 text-center px-6 relative overflow-hidden"
+        className="bg-linear-to-br from-yellow-100 via-yellow-200 to-yellow-300 py-24 text-center px-6 relative overflow-hidden"
       >
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl"></div>
@@ -485,38 +485,38 @@ export default function CartoonStorytellingApp() {
 
         {/* SOCIAL ICONS */}
         <div className="flex gap-5 text-2xl text-gray-700">
-          <a
-            href="https://github.com/ThembelihleQueeneth"
+          <RouterLink
+            to="https://github.com/ThembelihleQueeneth"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
           >
             <FaGithub />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/thembelihle-maluka-287b542ba/"
+          </RouterLink>
+          <RouterLink
+            to="https://www.linkedin.com/in/thembelihle-maluka-287b542ba/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
           >
             <FaLinkedin />
-          </a>
-          <a
-            href="mailto:malukathembelihle95@gmail.com"
+          </RouterLink>
+          <RouterLink
+            to="mailto:malukathembelihle95@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
           >
             <MdEmail />
-          </a>
-          <a
-            href="https://wa.me/0793316193"
+          </RouterLink>
+          <RouterLink
+            to="https://wa.me/0793316193"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
           >
             <FaWhatsapp />
-          </a>
+          </RouterLink>
 
          
         </div>
