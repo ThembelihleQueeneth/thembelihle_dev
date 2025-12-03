@@ -49,6 +49,7 @@ export const Footer = () => {
             <RouterLink
               to="/journey"
               className="cursor-pointer text-gray-800 hover:text-yellow-500 hover:-translate-y-1 transition-all duration-200"
+              target="blank"
             >
               Journey
             </RouterLink>

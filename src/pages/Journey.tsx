@@ -295,7 +295,9 @@ export default function CartoonStorytellingApp() {
         className="fixed top-6 left-1/2 transform -translate-x-1/2 z-40 w-11/12 max-w-5xl bg-white/90 backdrop-blur-md shadow-lg rounded-2xl p-4 flex items-center justify-between"
       >
         <div className="flex items-center gap-3">
-          <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center font-bold text-black shadow-md">TQ</div>
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-yellow-500 to-amber-600 bg-clip-text text-transparent transition-transform duration-200 group-hover:scale-110">
+              TQM
+            </h1>
           <div className="text-sm">
             <div className="font-bold">My Journey</div>
             <div className="text-xs text-gray-500">From Zero to Developer</div>

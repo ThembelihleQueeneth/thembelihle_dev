@@ -46,8 +46,8 @@ export const About = () => {
 
           <p className="text-gray-600 text-lg leading-relaxed animate-slideDown delay-400">
             I have over a year of experience in full-stack development, 
-            crafting responsive, accessible websites that deliver seamless user experiences. 
-            I'm passionate about solving complex problems with clean, maintainable code 
+            building responsive, accessible websites that deliver seamless user experiences. 
+            I'm all  about solving complex problems with clean, maintainable code 
             and bringing innovative ideas to life.
           </p>
 
