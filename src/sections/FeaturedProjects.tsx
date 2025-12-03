@@ -106,7 +106,7 @@ export const FeaturedProjects = () => {
         <div className="flex justify-center mt-12">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="group relative px-8 py-4 bg-yellow-400 text-black font-semibold rounded-full shadow-lg hover:bg-yellow-300 transition-all duration-300 flex items-center gap-3 border border-black"
+            className="group relative px-8 py-4 bg-yellow-400 text-white font-semibold rounded-full shadow-lg hover:bg-yellow-300 transition-all duration-300 flex items-center gap-3 "
           >
             <span>{showAll ? "Show Less" : "View More Projects"}</span>
             {showAll ? (
@@ -139,7 +139,7 @@ const ProjectCard = ({ image, title, desc, tech, live, code }: ProjectCardProps)
 
   return (
     <div
-      className="bg-white border border-black rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col"
+      className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -151,7 +151,7 @@ const ProjectCard = ({ image, title, desc, tech, live, code }: ProjectCardProps)
           className={`h-full w-full object-cover transition-transform duration-500 ${isHovered ? "scale-110" : "scale-100"}`}
         />
         <div
-          className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${isHovered ? "opacity-100" : "opacity-0"}`}
+          className={`absolute inset-0  transition-opacity duration-300 ${isHovered ? "opacity-100" : "opacity-0"}`}
         />
       </div>
 
@@ -165,7 +165,7 @@ const ProjectCard = ({ image, title, desc, tech, live, code }: ProjectCardProps)
           {tech.map((item) => (
             <span
               key={item}
-              className="px-3 py-1 bg-yellow-400 text-black rounded-full text-sm font-bold border border-black"
+              className="px-3 py-1 bg-yellow-400 text-white rounded-full text-sm font-bold "
             >
               {item}
             </span>

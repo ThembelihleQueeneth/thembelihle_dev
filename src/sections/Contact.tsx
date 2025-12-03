@@ -1,38 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { Button } from "../components/Button";
 
-const Button = ({ text, onClick }) => (
-  <button
-    onClick={onClick}
-    className="px-8 py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-semibold rounded-lg hover:shadow-xl hover:scale-105 transition-all duration-300 border border-black"
-  >
-    {text}
-  </button>
-);
+type FormFields = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+  const [formData, setFormData] = useState<FormFields>({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
   const handleSubmit = () => {
     setIsSubmitted(true);
+
     setTimeout(() => {
       setIsSubmitted(false);
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
     }, 3000);
   };
 
-  const handleChange = (field, value) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+  const handleChange = (field: keyof FormFields, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
-
   return (
     <section
-      className="py-16 px-6 md:px-20 bg-gradient-to-br from-white via-yellow-50 to-yellow-100 relative overflow-hidden"
+      className="py-16 px-6 md:px-20 bg-linear-to-br from-white via-yellow-50 to-yellow-100 relative overflow-hidden"
       id="contact"
     >
       {/* Decorative background yellow blobs */}
@@ -44,7 +48,7 @@ export default function Contact() {
         <div className="inline-block mb-6 relative">
           {/* Smiley Face matches yellow theme */}
           <div className="w-20 h-20 mx-auto mb-4 relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full animate-bounce-slow shadow-lg"></div>
+            <div className="absolute inset-0 bg-linear-to-br from-yellow-300 to-yellow-500 rounded-full animate-bounce-slow shadow-lg"></div>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="flex gap-3 mb-2">
                 <div className="w-2 h-3 bg-black rounded-full animate-blink"></div>
@@ -57,7 +61,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-black to-yellow-600 bg-clip-text text-transparent">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-black to-yellow-600 bg-clip-text text-transparent">
           Let's Work Together
         </h1>
 
@@ -117,7 +121,6 @@ export default function Contact() {
             Message
           </label>
           <textarea
-            rows="5"
             value={formData.message}
             onChange={(e) => handleChange('message', e.target.value)}
             placeholder="Write your message..."
@@ -139,7 +142,7 @@ export default function Contact() {
 
       </div>
 
-      <style jsx>{`
+      <style >{`
         @keyframes blob {
           0%, 100% { transform: translate(0, 0) scale(1); }
           33% { transform: translate(30px, -50px) scale(1.1); }

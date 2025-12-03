@@ -58,38 +58,38 @@ export const Footer = () => {
 
         {/* SOCIAL ICONS */}
         <div className="flex gap-5 text-2xl text-gray-700">
-          <a
-            href="https://github.com/ThembelihleQueeneth"
+          <RouterLink
+            to="https://github.com/ThembelihleQueeneth"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
           >
             <FaGithub />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/thembelihle-maluka-287b542ba/"
+          </RouterLink>
+          <RouterLink
+            to="https://www.linkedin.com/in/thembelihle-maluka-287b542ba/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
           >
             <FaLinkedin />
-          </a>
-          <a
-            href="mailto:malukathembelihle95@gmail.com"
+          </RouterLink>
+          <RouterLink
+            to="mailto:malukathembelihle95@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
           >
             <MdEmail />
-          </a>
-          <a
-            href="https://wa.me/0793316193"
+          </RouterLink>
+          <RouterLink
+            to="https://wa.me/0793316193"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
           >
             <FaWhatsapp />
-          </a>
+          </RouterLink>
 
           {/* Chat Modal Button */}
           <button aria-label="chat"

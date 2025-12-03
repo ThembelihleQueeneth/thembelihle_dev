@@ -52,6 +52,7 @@ export const ChatModal: React.FC<ChatModalProps> = ({ isOpen, onClose }) => {
         const errorMsg: Message = { sender: "ai", text: "Oops! Something went wrong." };
         setMessages((prev) => [...prev, errorMsg]);
         setIsTyping(false);
+        console.log(err)
       }, 800);
     }
   };
@@ -70,7 +71,7 @@ export const ChatModal: React.FC<ChatModalProps> = ({ isOpen, onClose }) => {
       >
         
         {/* Header with gradient */}
-        <div className="bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 text-white px-6 py-4 flex justify-between items-center shadow-lg">
+        <div className="bg-linear-to-r from-amber-500 via-yellow-500 to-orange-500 text-white px-6 py-4 flex justify-between items-center shadow-lg">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
               <Bot className="w-6 h-6" />
@@ -80,7 +81,8 @@ export const ChatModal: React.FC<ChatModalProps> = ({ isOpen, onClose }) => {
               <p className="text-xs text-white/90">Always here to help</p>
             </div>
           </div>
-          <button 
+          <button  
+            aria-label="close"
             onClick={onClose} 
             className="w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm flex items-center justify-center transition-all duration-200 hover:rotate-90"
           >
@@ -89,7 +91,7 @@ export const ChatModal: React.FC<ChatModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         {/* Messages */}
-        <div className="flex-1 p-6 overflow-y-auto space-y-4 bg-gradient-to-b from-gray-50 to-white">
+        <div className="flex-1 p-6 overflow-y-auto space-y-4 bg-linear-to-b from-gray-50 to-white">
           {messages.length === 0 && (
             <div className="flex flex-col items-center justify-center h-full text-gray-400">
               <Bot className="w-16 h-16 mb-3 opacity-50" />
@@ -105,7 +107,7 @@ export const ChatModal: React.FC<ChatModalProps> = ({ isOpen, onClose }) => {
               }`}
             >
               {msg.sender === "ai" && (
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center flex-shrink-0 shadow-md">
+                <div className="w-8 h-8 rounded-full bg-linear-to-br from-yellow-400 to-orange-500 flex items-center justify-center flex-shrink-0 shadow-md">
                   <Bot className="w-5 h-5 text-white" />
                 </div>
               )}
@@ -113,7 +115,7 @@ export const ChatModal: React.FC<ChatModalProps> = ({ isOpen, onClose }) => {
               <div
                 className={`max-w-[75%] px-5 py-3 rounded-2xl shadow-md transition-all duration-200 hover:shadow-lg ${
                   msg.sender === "user"
-                    ? "bg-gradient-to-br from-yellow-400 to-orange-500 text-white rounded-tr-sm"
+                    ? "bg-linear-to-br from-yellow-400 to-orange-500 text-white rounded-tr-sm"
                     : "bg-white text-gray-800 rounded-tl-sm border border-gray-100"
                 }`}
               >
@@ -121,7 +123,7 @@ export const ChatModal: React.FC<ChatModalProps> = ({ isOpen, onClose }) => {
               </div>
               
               {msg.sender === "user" && (
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center flex-shrink-0 shadow-md">
+                <div className="w-8 h-8 rounded-full bg-linear-to-br from-gray-600 to-gray-800 flex items-center justify-center flex-shrink-0 shadow-md">
                   <User className="w-5 h-5 text-white" />
                 </div>
               )}
@@ -130,7 +132,7 @@ export const ChatModal: React.FC<ChatModalProps> = ({ isOpen, onClose }) => {
           
           {isTyping && (
             <div className="flex gap-3 animate-in slide-in-from-bottom-3 duration-300">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center flex-shrink-0 shadow-md">
+              <div className="w-8 h-8 rounded-full bg-linear-to-br from-yellow-400 to-orange-500 flex items-center justify-center flex-shrink-0 shadow-md">
                 <Bot className="w-5 h-5 text-white" />
               </div>
               <div className="bg-white text-gray-800 px-5 py-3 rounded-2xl rounded-tl-sm shadow-md border border-gray-100">
@@ -159,9 +161,10 @@ export const ChatModal: React.FC<ChatModalProps> = ({ isOpen, onClose }) => {
               />
             </div>
             <button
+            aria-label="send"
               onClick={sendMessage}
               disabled={!input.trim()}
-              className="bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 hover:from-amber-600 hover:via-yellow-600 hover:to-orange-600 disabled:from-gray-300 disabled:via-gray-300 disabled:to-gray-300 disabled:cursor-not-allowed text-white w-12 h-12 rounded-2xl transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
+              className="bg-linear-to-r from-amber-500 via-yellow-500 to-orange-500 hover:from-amber-600 hover:via-yellow-600 hover:to-orange-600 disabled:from-gray-300 disabled:via-gray-300 disabled:to-gray-300 disabled:cursor-not-allowed text-white w-12 h-12 rounded-2xl transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
             >
               <Send className="w-5 h-5" />
             </button>
@@ -177,10 +180,10 @@ export default function App() {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 via-purple-50 to-pink-50 flex items-center justify-center p-4">
       <button
         onClick={() => setIsOpen(true)}
-        className="bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 hover:from-amber-600 hover:via-yellow-600 hover:to-orange-600 text-white px-8 py-4 rounded-2xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-200 hover:scale-105 active:scale-95"
+        className="bg-linear-to-r from-amber-500 via-yellow-500 to-orange-500 hover:from-amber-600 hover:via-yellow-600 hover:to-orange-600 text-white px-8 py-4 rounded-2xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-200 hover:scale-105 active:scale-95"
       >
         Open Chat
       </button>

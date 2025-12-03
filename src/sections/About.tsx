@@ -3,6 +3,8 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { TbMessageChatbotFilled } from "react-icons/tb";
 import { HiDownload } from "react-icons/hi";
+import { Link } from "react-router-dom";
+
 
 
 export const About = () => {
@@ -12,7 +14,7 @@ export const About = () => {
   return (
     <div 
       id="about"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-yellow-50 to-gray-100 px-6 md:px-20 lg:px-60 py-20"
+      className="min-h-screen flex items-center justify-center bg-linear-to-br from-gray-50 via-yellow-50 to-gray-100 px-6 md:px-20 lg:px-60 py-20"
     >
       <div className="max-w-7xl w-full grid md:grid-cols-2 gap-12 items-center">
         
@@ -83,31 +85,32 @@ export const About = () => {
 
           {/* SOCIAL ICONS */}
           <div className="flex gap-4 text-2xl pt-4 animate-slideDown delay-700">
-            <a 
-              href="https://github.com/ThembelihleQueeneth" 
+            <Link 
+              to="https://github.com/ThembelihleQueeneth" 
               className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 hover:bg-yellow-500 hover:text-white transform hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-md" 
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaGithub />
-            </a>
-            <a 
-              href="https://www.linkedin.com/in/thembelihle-maluka-287b542ba/" 
+            </Link>
+            <Link 
+              to="https://www.linkedin.com/in/thembelihle-maluka-287b542ba/" 
               className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 hover:bg-yellow-500 hover:text-white transform hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-md" 
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaLinkedin />
-            </a>
-            <a 
-              href="mailto:malukathembelihle95@gmail.com" 
+            </Link>
+            <Link 
+              to="mailto:malukathembelihle95@gmail.com" 
               className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 hover:bg-yellow-500 hover:text-white transform hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-md" 
               target="_blank"
               rel="noopener noreferrer"
             >
               <MdEmail />
-            </a>
+            </Link>
             <button
+            aria-label="chatbot"
               onClick={() => setIsChatOpen(true)}
               className="w-12 h-12 flex items-center justify-center rounded-full bg-yellow-500 text-white hover:bg-yellow-600 transform hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-md animate-pulse"
             >
@@ -120,7 +123,7 @@ export const About = () => {
         <div className="flex justify-center md:justify-end animate-fadeIn delay-300">
           <div className="relative group">
             {/* Decorative background elements */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-300 blur-xl"></div>
+            <div className="absolute -inset-4 bg-linear-to-r from-yellow-400 to-yellow-600 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-300 blur-xl"></div>
             <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-400 rounded-full opacity-20 -translate-y-8 translate-x-8 group-hover:scale-110 transition-transform duration-500"></div>
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-yellow-500 rounded-full opacity-20 translate-y-8 -translate-x-8 group-hover:scale-110 transition-transform duration-500"></div>
             

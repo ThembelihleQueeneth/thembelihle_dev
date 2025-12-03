@@ -8,21 +8,21 @@ interface Skill {
 }
 
 const techSkills: Skill[] = [
-  { name: "HTML5", img: "/html.png", category: "Frontend" },
-  { name: "CSS3", img: "/css3.png", category: "Frontend" },
-  { name: "Bootstrap", img: "/Bootstrap_logo.svg.png", category: "Frontend" },
-  { name: "React", img: "/React-icon.svg.png", category: "Frontend" },
-  { name: "Tailwind CSS", img: "/tailwind.png", category: "Frontend" },
-  { name: "TypeScript", img: "/typescript.png", category: "Frontend" },
-  { name: "JavaScript", img: "/javascript.png", category: "Frontend" },
-  { name: "Figma", img: "/Figma-Logo.png", category: "Frontend" },
-  { name: "Java", img: "/java.png", category: "Backend" },
-  { name: "Node.js", img: "/nodejs.jpg", category: "Backend" },
-  { name: "MySQL", img: "/MySQL-logo.png.webp", category: "Backend" },
-  { name: "PostgreSQL", img: "/posgresql.png", category: "Backend" },
-  { name: "Git", img: "/git.jpg", category: "Tools" },
-  { name: "GitHub", img: "/github.png", category: "Tools" },
-  { name: "Vercel", img: "/vercel.png", category: "Tools" },
+  { name: "HTML5", img: "/html.png", category: "Frontend Language" },
+  { name: "CSS3", img: "/css3.png", category: "Design StyleSheet" },
+  { name: "Bootstrap", img: "/Bootstrap_logo.svg.png", category: "Frontend CSS Library" },
+  { name: "React", img: "/React-icon.svg.png", category: "Frontend Web Framework" },
+  { name: "Tailwind CSS", img: "/tailwind.png", category: "Frontend CSS Library" },
+  { name: "TypeScript", img: "/typescript.png", category: "Frontend Language" },
+  { name: "JavaScript", img: "/javascript.png", category: "Frontend Language" },
+  { name: "Figma", img: "/Figma-Logo.png", category: "Design Tool" },
+  { name: "Java", img: "/java.png", category: "Backend Language" },
+  { name: "Node.js", img: "/nodejs.jpg", category: "Backend Language" },
+  { name: "MySQL", img: "/MySQL-logo.png.webp", category: "Backend Database Management" },
+  { name: "PostgreSQL", img: "/posgresql.png", category: "Backend Database Management" },
+  { name: "Git", img: "/git.jpg", category: "Version Control Tool" },
+  { name: "GitHub", img: "/github.png", category: "Version Control Tools" },
+  { name: "Vercel", img: "/vercel.png", category: "Hosting Platform" },
 ];
 
 export default function TechStack() {
@@ -257,8 +257,8 @@ export default function TechStack() {
   return (
     <div className="w-full h-screen bg-gray-900 flex flex-col items-center justify-center relative"  id="stack">
       <div className="absolute top-8 text-center z-10">
-        <h1 className="text-5xl font-bold text-white mb-2">Welcome to my World</h1>
-        <p className="text-gray-300">My Tech Stack</p>
+        <h1 className="text-5xl font-bold text-white mb-2">Welcome to my World (Tech Stack)</h1>
+        <p className="text-gray-300">Hover to Learn More</p>
       </div>
 
       {isLoading && (
