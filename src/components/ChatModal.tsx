@@ -93,7 +93,7 @@ export const ChatModal: React.FC<ChatModalProps> = ({ isOpen, onClose }) => {
           {messages.length === 0 && (
             <div className="flex flex-col items-center justify-center h-full text-gray-400">
               <Bot className="w-16 h-16 mb-3 opacity-50" />
-              <p className="text-sm">Start a conversation...</p>
+              <p className="text-sm">Ask anything you need to know about Thembelihle</p>
             </div>
           )}
           
