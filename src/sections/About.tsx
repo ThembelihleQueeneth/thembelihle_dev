@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { TbMessageChatbotFilled } from "react-icons/tb";
+// import { TbMessageChatbotFilled } from "react-icons/tb";
 import { HiDownload } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
@@ -109,13 +109,13 @@ export const About = () => {
             >
               <MdEmail />
             </Link>
-            <button
+            {/* <button
             aria-label="chatbot"
               onClick={() => setIsChatOpen(true)}
               className="w-12 h-12 flex items-center justify-center rounded-full bg-yellow-500 text-white hover:bg-yellow-600 transform hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-md animate-pulse"
             >
               <TbMessageChatbotFilled />
-            </button>
+            </button> */}
           </div>
         </div>
 
@@ -153,24 +153,7 @@ export const About = () => {
       </div>
 
       {/* Chat Modal - You'll need to implement this component */}
-      {isChatOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-hidden animate-scaleIn">
-            <div className="bg-yellow-500 p-4 flex items-center justify-between">
-              <h3 className="text-white font-semibold text-lg">Chat with me</h3>
-              <button
-                onClick={() => setIsChatOpen(false)}
-                className="text-white hover:bg-yellow-600 rounded-full w-8 h-8 flex items-center justify-center transition-colors"
-              >
-                ✕
-              </button>
-            </div>
-            <div className="p-6">
-              <p className="text-gray-600">Chat functionality coming soon!</p>
-            </div>
-          </div>
-        </div>
-      )}
+      
 
       <style>{`
         @keyframes fadeIn {

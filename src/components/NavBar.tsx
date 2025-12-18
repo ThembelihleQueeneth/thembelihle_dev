@@ -3,7 +3,7 @@ import { TbMessageChatbotFilled } from "react-icons/tb";
 import { Button } from './Button';
 import { FaDownload } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
-import { Link as RouterLink } from "react-router-dom";
+// import { Link as RouterLink } from "react-router-dom";
 import { ChatModal } from "./ChatModal";
 
 export const NavBar = () => {
@@ -76,7 +76,7 @@ export const NavBar = () => {
               </li>
             ))}
 
-            <li>
+            {/* <li>
               <RouterLink
                 to="/journey"
                 className="relative cursor-pointer text-gray-700 hover:text-yellow-500 transition-colors duration-200 font-medium group"
@@ -85,19 +85,19 @@ export const NavBar = () => {
                 Journey
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
               </RouterLink>
-            </li>
+            </li> */}
           </ul>
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-4">
-            <button
+            {/* <button
               aria-label="Open chatbot"
               onClick={() => setIsChatOpen(true)}
               className="relative text-gray-700 hover:text-amber-500 text-2xl transition-all duration-200 hover:scale-110 group"
             >
               <TbMessageChatbotFilled />
               <span className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-            </button>
+            </button> */}
 
             <a
               href="/Maluka_Thembelihle_CV.pdf"
@@ -166,7 +166,7 @@ export const NavBar = () => {
                 </li>
               ))}
 
-              <li>
+              {/* <li>
                 <RouterLink
                   to="/journey"
                   className="cursor-pointer text-gray-700 hover:text-yellow-500 transition-colors duration-200 text-lg font-medium"
@@ -174,7 +174,7 @@ export const NavBar = () => {
                 >
                   Journey
                 </RouterLink>
-              </li>
+              </li> */}
             </ul>
 
             <div className="flex flex-col gap-4 mt-8 pt-8 border-t border-gray-200">

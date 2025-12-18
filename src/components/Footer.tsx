@@ -3,8 +3,8 @@ import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom"; // for page navigation
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { TbMessageChatbotFilled } from "react-icons/tb";
-import { ChatModal } from "../components/ChatModal";
+// import { TbMessageChatbotFilled } from "react-icons/tb";
+// import { ChatModal } from "../components/ChatModal";
 
 export const Footer = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -45,7 +45,7 @@ export const Footer = () => {
           ))}
 
           {/* Journey link goes to /journey page */}
-          <li>
+          {/* <li>
             <RouterLink
               to="/journey"
               className="cursor-pointer text-gray-800 hover:text-yellow-500 hover:-translate-y-1 transition-all duration-200"
@@ -53,7 +53,7 @@ export const Footer = () => {
             >
               Journey
             </RouterLink>
-          </li>
+          </li> */}
         </ul>
 
         {/* SOCIAL ICONS */}
@@ -92,20 +92,20 @@ export const Footer = () => {
           </RouterLink>
 
           {/* Chat Modal Button */}
-          <button aria-label="chat"
+          {/* <button aria-label="chat"
             onClick={() => setIsChatOpen(true)}
             className="hover:text-yellow-500 hover:scale-110 transition-transform duration-200"
           >
             <TbMessageChatbotFilled />
-          </button>
+          </button> */}
         </div>
       </div>
 
       {/* Chat Modal */}
-      <ChatModal
+      {/* <ChatModal
         isOpen={isChatOpen}
         onClose={() => setIsChatOpen(false)}
-      />
+      /> */}
     </footer>
   );
 };
