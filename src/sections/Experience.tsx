@@ -54,25 +54,25 @@ export const Experience = () => {
   ];
 
   return (
-    <div id="experience" className="relative py-20 mt-10 bg-white text-black px-60">
-      <h1 className="text-4xl ml-5 font-bold text-yellow-500 text-center mb-20">
+    <div id="experience" className="relative py-20 mt-10 bg-white text-black px-6 md:px-20 lg:px-60">
+      <h1 className="text-4xl font-bold text-yellow-500 text-center mb-20">
         Experience & Education
       </h1>
 
-      {/* Center vertical line */}
-      <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-yellow-500 transform -translate-x-1/2"></div>
+      {/* Vertical line - centered on md+, left-aligned on mobile */}
+      <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-yellow-500 transform -translate-x-1/2"></div>
 
-      <div className="flex flex-col space-y-20">
+      <div className="flex flex-col space-y-12 md:space-y-20">
         {experiences.map((exp, idx) => {
           const isRight = idx % 2 === 0; // even index = right, odd = left
           return (
-            <div key={idx} className="w-full flex justify-between items-center relative">
-              {/* Left empty space for right card */}
-              {isRight && <div className="w-1/2"></div>}
+            <div key={idx} className="w-full flex flex-col md:flex-row justify-between items-center relative gap-8 md:gap-0">
+              {/* Desktop layout spacing */}
+              {isRight && <div className="hidden md:block md:w-1/2"></div>}
 
               <motion.div
-                className={`w-5/12 bg-gray-50 p-6 rounded-2xl shadow-lg relative ${
-                  isRight ? "ml-8" : "mr-8"
+                className={`w-full md:w-5/12 bg-gray-50 p-6 rounded-2xl shadow-lg relative ml-12 md:ml-0 ${
+                  isRight ? "md:ml-8" : "md:mr-8"
                 }`}
                 variants={cardVariants}
                 initial="hidden"
@@ -80,18 +80,18 @@ export const Experience = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: idx * 0.2 }}
               >
-                {/* small circle */}
+                {/* timeline circle - left-aligned on mobile, alternating on md+ */}
                 <div
-                  className={`absolute top-8 w-5 h-5 bg-yellow-500 rounded-full ${
-                    isRight ? "-left-10" : "-right-10"
+                  className={`absolute top-8 w-5 h-5 bg-yellow-500 rounded-full -left-9 md:left-auto ${
+                    isRight ? "md:-left-10" : "md:-right-10"
                   }`}
                 ></div>
 
-                <div className="flex items-center justify-between mb-2">
-                  <h2 className="flex items-center text-2xl font-semibold gap-2">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+                  <h2 className="flex items-center text-xl md:text-2xl font-semibold gap-2">
                     {exp.icon} {exp.title}
                   </h2>
-                  <span className="text-gray-600">{exp.date}</span>
+                  <span className="text-gray-600 text-sm md:text-base whitespace-nowrap">{exp.date}</span>
                 </div>
 
                 <div className="flex items-center gap-2 text-gray-600 font-medium mb-4">
@@ -99,15 +99,15 @@ export const Experience = () => {
                   <span>{exp.company}</span>
                 </div>
 
-                <ul className="list-disc list-inside space-y-2 text-gray-700">
+                <ul className="list-disc list-inside space-y-2 text-gray-700 text-sm md:text-base">
                   {exp.details.map((d, i) => (
                     <li key={i}>{d}</li>
                   ))}
                 </ul>
               </motion.div>
 
-              {/* Right empty space for left card */}
-              {!isRight && <div className="w-1/2"></div>}
+              {/* Desktop layout spacing */}
+              {!isRight && <div className="hidden md:block md:w-1/2"></div>}
             </div>
           );
         })}

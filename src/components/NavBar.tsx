@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { TbMessageChatbotFilled } from "react-icons/tb";
 import { Button } from './Button';
-import { FaDownload } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
 // import { Link as RouterLink } from "react-router-dom";
 import { ChatModal } from "./ChatModal";
@@ -38,11 +37,10 @@ export const NavBar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          isScrolled
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled
             ? "bg-white/95 shadow-lg backdrop-blur-md py-3"
             : "bg-white/90 shadow-md backdrop-blur-sm py-4"
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
@@ -99,14 +97,14 @@ export const NavBar = () => {
               <span className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
             </button> */}
 
-            <a
-              href="/Maluka_Thembelihle_CV.pdf"
-              download="Maluka_Thembelihle_CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+            <ScrollLink
+              to="contact"
+              smooth={true}
+              duration={600}
+              offset={-80}
             >
-              <Button icon={<FaDownload />} text="Resume" />
-            </a>
+              <Button text="Hire Me" />
+            </ScrollLink>
           </div>
 
           {/* Mobile Menu Button */}
@@ -116,19 +114,16 @@ export const NavBar = () => {
             aria-label="Toggle mobile menu"
           >
             <span
-              className={`w-6 h-0.5 bg-gray-700 transition-all duration-300 ${
-                isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
-              }`}
+              className={`w-6 h-0.5 bg-gray-700 transition-all duration-300 ${isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
+                }`}
             ></span>
             <span
-              className={`w-6 h-0.5 bg-gray-700 transition-all duration-300 ${
-                isMobileMenuOpen ? "opacity-0" : ""
-              }`}
+              className={`w-6 h-0.5 bg-gray-700 transition-all duration-300 ${isMobileMenuOpen ? "opacity-0" : ""
+                }`}
             ></span>
             <span
-              className={`w-6 h-0.5 bg-gray-700 transition-all duration-300 ${
-                isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
-              }`}
+              className={`w-6 h-0.5 bg-gray-700 transition-all duration-300 ${isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
+                }`}
             ></span>
           </button>
         </div>
@@ -136,15 +131,13 @@ export const NavBar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden transition-opacity duration-300 ${
-          isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden transition-opacity duration-300 ${isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
         onClick={() => setIsMobileMenuOpen(false)}
       >
         <div
-          className={`fixed right-0 top-0 h-full w-64 bg-white shadow-2xl transform transition-transform duration-300 ${
-            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+          className={`fixed right-0 top-0 h-full w-64 bg-white shadow-2xl transform transition-transform duration-300 ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex flex-col h-full pt-20 px-6">
@@ -189,15 +182,16 @@ export const NavBar = () => {
                 Chat with me
               </button>
 
-              <a
-                href="/Maluka_Thembelihle_CV.pdf"
-                download="Maluka_Thembelihle_CV.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <ScrollLink
+                to="contact"
+                smooth={true}
+                duration={600}
+                offset={-80}
                 className="w-full"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
-                <Button icon={<FaDownload />} text="Download Resume" />
-              </a>
+                <Button text="Hire Me" />
+              </ScrollLink>
             </div>
           </div>
         </div>
